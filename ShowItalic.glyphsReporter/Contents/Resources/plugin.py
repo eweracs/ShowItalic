@@ -35,7 +35,7 @@ class ShowItalic(ReporterPlugin):
 
 	@objc.python_method
 	def inactiveLayerForeground(self, layer):
-		if self.getScale() > self.threshold and self.conditionsAreMetForDrawing:
+		if self.getScale() > self.threshold and self.conditionsAreMetForDrawing():
 			activeLayer = self.controller.activeLayer()
 			if activeLayer and activeLayer.parent.name in layer.componentNames():
 				for item in activeLayer.selection:
